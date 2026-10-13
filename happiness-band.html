@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fff9ea">
+<title>Lambodhara 2.0 — JIA Happiness Band</title>
+<style>
+:root{--ink:#161326;--muted:#756d83;--pink:#ff4d98;--yellow:#ffd65b;--blue:#697cff;--mint:#65dfc1;--glass:rgba(255,255,255,.82)}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;padding:18px;display:grid;place-items:center;font-family:Arial,sans-serif;color:var(--ink);background:radial-gradient(circle at 10% 0%,#ffd8e8 0 18%,transparent 42%),radial-gradient(circle at 100% 100%,#cfd5ff 0 20%,transparent 45%),linear-gradient(135deg,#fff9ea,#f4edff)}
+.app{width:min(1050px,100%);display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.card{border:1px solid #ffffffcc;border-radius:30px;background:var(--glass);box-shadow:0 24px 70px #402b6618;backdrop-filter:blur(18px)}.camera{min-height:610px;position:relative;overflow:hidden;background:#19172d}#cameraArea,.fallback,video{width:100%;height:100%;min-height:610px}video{display:block;object-fit:cover;transform:scaleX(-1)}.fallback{display:grid;place-items:center;text-align:center;color:#fff;padding:32px;background:linear-gradient(135deg,#272044,#e83d88)}.fallback .emoji{font-size:70px}.fallback h2{margin:12px 0}.overlay{position:absolute;inset:0;pointer-events:none;background:linear-gradient(transparent 64%,#0e0b23c9),radial-gradient(ellipse at center,transparent 34%,#15112e94)}.face-frame{position:absolute;left:14%;right:14%;top:20%;height:55%;border:2px solid #ffffffc9;border-radius:48% 48% 42% 42%;box-shadow:0 0 0 999px #1a14351c,0 0 28px #ffd65baa;pointer-events:none}.face-frame:before,.face-frame:after{content:"";position:absolute;width:25px;height:25px;border-color:var(--yellow);border-style:solid;top:-2px}.face-frame:before{left:-2px;border-width:3px 0 0 3px;border-radius:20px 0 0}.face-frame:after{right:-2px;border-width:3px 3px 0 0;border-radius:0 20px 0 0}.scanline{position:absolute;left:8%;right:8%;height:2px;top:22%;background:var(--yellow);box-shadow:0 0 14px var(--yellow);animation:scan 2.4s ease-in-out infinite;pointer-events:none}@keyframes scan{50%{top:76%}}.brand{position:absolute;top:20px;left:22px;color:#fff;font-size:12px;font-weight:900;letter-spacing:.12em}.status{position:absolute;right:20px;top:18px;color:#fff;padding:9px 12px;border-radius:30px;background:#0005;font-size:11px;font-weight:bold}.dot{display:inline-block;width:7px;height:7px;background:#ff5b87;border-radius:50%;margin-right:6px;box-shadow:0 0 8px #ff5b87}.band{position:absolute;left:7%;right:7%;bottom:25px;padding:18px 19px;border-radius:22px;background:#161326d9;border:1px solid #ffffff35;color:#fff}.band-top{display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:.08em}.band-top strong{color:var(--yellow);font-size:13px}.band-score{font-size:70px;font-weight:900;line-height:.9;margin:9px 0 4px}.band-mood{color:var(--yellow);font-weight:900;font-size:17px}.panel{padding:25px}.kicker{font-size:11px;font-weight:900;letter-spacing:.15em;color:#a23e76}h1{font-size:clamp(31px,5vw,52px);line-height:.94;margin:8px 0}.sub{color:var(--muted);line-height:1.45;margin:0 0 18px}.score-ring{width:190px;height:190px;margin:14px auto 20px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--pink) 0deg,var(--yellow) 0deg,#e9e4ef 0deg);position:relative}.score-ring:before{content:"";position:absolute;inset:14px;border-radius:50%;background:#fffaf5}.score-content{position:relative;text-align:center}.score{font-size:58px;font-weight:900;line-height:.9}.score-label{font-size:11px;color:var(--muted);margin-top:8px;font-weight:bold}.metric{margin:17px 0}.metric-head{display:flex;justify-content:space-between;font-size:14px;font-weight:900;margin-bottom:7px;gap:10px}.bar{height:12px;background:#e9e4ee;border-radius:20px;overflow:hidden}.fill{height:100%;width:0;border-radius:inherit;transition:width .25s ease}#smileFill{background:linear-gradient(90deg,#ff76ae,#ffd65b)}#activityFill{background:linear-gradient(90deg,#7189ff,#65dfc1)}button{width:100%;padding:15px;border:0;border-radius:16px;color:#fff;background:linear-gradient(100deg,#ff438f,#6c61ff);font-size:15px;font-weight:900;cursor:pointer;box-shadow:0 12px 25px #6c61ff30}button.secondary{margin-top:9px;background:#ebe6f2;color:#5d546b;box-shadow:none}.calibration{border-top:1px solid #e8e0ed;margin-top:17px;padding-top:14px}input{width:100%;accent-color:var(--pink)}.tip{font-size:11px;line-height:1.45;color:#80778b;margin:15px 0 0}.tagline{text-align:center;margin:18px 0 0;color:#913e70;font-weight:900;line-height:1.35}.error{color:#b3225f;font-size:12px;min-height:16px;margin-top:8px}
+@media(max-width:780px){body{padding:10px}.app{grid-template-columns:1fr;gap:12px}.camera,#cameraArea,.fallback,video{min-height:440px}.panel{padding:22px;border-radius:24px}.camera{border-radius:24px}.score-ring{width:160px;height:160px}.score{font-size:50px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="app">
+<section class="card camera">
+<div id="cameraArea"><div class="fallback"><div><div class="emoji">😊</div><h2>Ready for your happiness scan?</h2><p>Smile. Move. Let the band calculate your moment.</p></div></div></div>
+<div class="overlay"></div><div class="face-frame"></div><div class="scanline"></div>
+<div class="brand">LAMBÓDHARA 2.0</div><div class="status"><span class="dot"></span><span id="status">READY</span></div>
+<div class="band"><div class="band-top"><span>JIA HAPPINESS BAND</span><strong id="signal">NO SIGNAL</strong></div><div class="band-score" id="cameraScore">--</div><div class="band-mood" id="cameraMood">Happiness has no score.</div></div>
+</section>
+<section class="card panel">
+<div class="kicker">THE HAPPINESS EXPERIMENT</div><h1>Can JIA measure your smile?</h1>
+<p class="sub">Your playful score combines two signals: screen brightness in the lower camera area and how much the image changes as you move.</p>
+<div class="score-ring" id="ring"><div class="score-content"><div class="score" id="score">--</div><div class="score-label">HAPPINESS SCORE</div></div></div>
+<div class="metric"><div class="metric-head"><span>🙂 Smile signal</span><span id="smileValue">0%</span></div><div class="bar"><div class="fill" id="smileFill"></div></div></div>
+<div class="metric"><div class="metric-head"><span>⚡ Activity signal</span><span id="activityValue">0%</span></div><div class="bar"><div class="fill" id="activityFill"></div></div></div>
+<button id="start">START HAPPINESS SCAN</button><button class="secondary" id="demo">TRY DEMO MODE</button><div class="error" id="error" role="status" aria-live="polite"></div>
+<div class="calibration"><div class="metric-head"><span>Smile calibration</span><span id="calValue">50%</span></div><input id="calibration" type="range" min="0" max="100" value="50"></div>
+<p class="tip">Camera mode asks for permission and runs in your browser. No video is recorded or uploaded. This is a playful brightness/motion heuristic—not genuine facial-expression recognition, a medical measurement, or a reliable measurement of happiness. Demo mode works without camera access.</p>
+<div class="tagline">Take the test.<br>Question the score.</div>
+</section></main>
+<canvas id="analysis" width="96" height="72" hidden></canvas>
+<script>
+(function(){
+const $=id=>document.getElementById(id),canvas=$("analysis"),ctx=canvas.getContext("2d",{willReadFrequently:true});
+let video=null,stream=null,running=false,demoMode=false,previous=null,smile=0,activity=0,calibration=50,raf=0;
+function fallback(){return '<div class="fallback"><div><div class="emoji">😊</div><h2>Ready for your happiness scan?</h2><p>Smile. Move. Let the band calculate your moment.</p></div></div>'}
+$("calibration").addEventListener("input",e=>{calibration=Number(e.target.value);$("calValue").textContent=calibration+"%"});
+$("start").addEventListener("click",async()=>{
+ if(running){stop();return}
+ $("error").textContent="";
+ if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){$("error").textContent="Camera access needs a supported browser and a secure HTTPS page. Try demo mode.";return}
+ try{
+  stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:"user",width:{ideal:720},height:{ideal:720}},audio:false});
+  video=document.createElement("video");video.autoplay=true;video.playsInline=true;video.muted=true;video.srcObject=stream;
+  $("cameraArea").replaceChildren(video);running=true;demoMode=false;previous=null;
+  $("start").textContent="STOP SCAN";$("demo").textContent="TRY DEMO MODE";$("status").textContent="SCANNING";$("signal").textContent="LIVE SIGNAL";
+  loop();
+ }catch(e){$("error").textContent="Camera access was not available. Allow camera permission or use demo mode.";if(stream)stream.getTracks().forEach(t=>t.stop());stream=null}
+});
+$("demo").addEventListener("click",()=>{if(running)stop();demoMode=true;running=true;$("status").textContent="DEMO MODE";$("signal").textContent="SIMULATED";$("demo").textContent="STOP DEMO";$("start").textContent="START CAMERA SCAN";$("error").textContent="";demoLoop()});
+function stop(){
+ running=false;demoMode=false;if(raf)cancelAnimationFrame(raf);if(stream)stream.getTracks().forEach(t=>t.stop());
+ stream=null;video=null;previous=null;$("cameraArea").innerHTML=fallback();$("start").textContent="START HAPPINESS SCAN";$("demo").textContent="TRY DEMO MODE";$("status").textContent="READY";$("signal").textContent="NO SIGNAL";
+}
+function loop(){
+ if(!running||demoMode||!video)return;
+ if(video.readyState<2){raf=requestAnimationFrame(loop);return}
+ ctx.drawImage(video,0,0,canvas.width,canvas.height);const d=ctx.getImageData(0,0,canvas.width,canvas.height).data;
+ let motion=0,faceLight=0,count=0;
+ for(let y=0;y<canvas.height;y++)for(let x=0;x<canvas.width;x++){const i=(y*canvas.width+x)*4,b=(d[i]+d[i+1]+d[i+2])/3;if(x>25&&x<71&&y>31&&y<56){faceLight+=b;count++}if(previous)motion+=Math.abs(d[i]-previous[i])+Math.abs(d[i+1]-previous[i+1])+Math.abs(d[i+2]-previous[i+2])}
+ previous=new Uint8ClampedArray(d);const rawSmile=Math.max(0,Math.min(100,(faceLight/Math.max(1,count)-48)*1.75)),rawActivity=Math.max(0,Math.min(100,motion/11500));
+ smile=smile*.84+(rawSmile*.7+calibration*.3)*.16;activity=activity*.84+rawActivity*.16;paint();raf=requestAnimationFrame(loop);
+}
+function demoLoop(){if(!running||!demoMode)return;const t=Date.now()/1000;smile=42+Math.sin(t*1.4)*28+Math.sin(t*3.2)*9;activity=48+Math.sin(t*2.2)*38;paint();raf=requestAnimationFrame(demoLoop)}
+function paint(){
+ smile=Math.max(0,Math.min(100,smile));activity=Math.max(0,Math.min(100,activity));const total=Math.round(smile*.65+activity*.35);
+ $("score").textContent=total;$("cameraScore").textContent=total;$("smileFill").style.width=smile+"%";$("activityFill").style.width=activity+"%";$("smileValue").textContent=Math.round(smile)+"%";$("activityValue").textContent=Math.round(activity)+"%";
+ const deg=total*3.6;$("ring").style.background="conic-gradient(#ff4d98 0deg,#ffd65b "+(deg*.7)+"deg,#65dfc1 "+deg+"deg,#e9e4ef "+deg+"deg)";
+ let mood="Warming up";if(total>=85)mood="Pure joy detected!";else if(total>=68)mood="Looking very happy";else if(total>=45)mood="A little happiness";$("cameraMood").textContent=mood;
+}
+})();
+</script>
+</body></html>
